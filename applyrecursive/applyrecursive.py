@@ -76,6 +76,6 @@ class ApplyRecursive():
         `data` payload to be modified
         """
         if trigger in map.keys():
-            self.func_kwargs[self.func_kwargs_data] = data
-            self.func_kwargs = {**self.func_kwargs, **map}
-            return self.func(*self.func_args, **self.func_kwargs)
+            _kwargs = {self.func_kwargs_data: data}
+            _kwargs = {**_kwargs, **map}
+            return self.func(*self.func_args, **_kwargs)
