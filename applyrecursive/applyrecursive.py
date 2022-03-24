@@ -38,7 +38,8 @@ class ApplyRecursive():
         def recurse(map, trigger, iterable):
 
             if iterable == None:
-                return
+                try: return self.logic(map, trigger, iterable)
+                except: return iterable
 
             elif isinstance(iterable, list):
                 for idx, item in enumerate(iterable):
