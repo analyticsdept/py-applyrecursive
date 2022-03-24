@@ -77,5 +77,5 @@ class ApplyRecursive():
         """
         if trigger in map.keys():
             _kwargs = {self.func_kwargs_data: data}
-            _kwargs = {**_kwargs, **map}
+            _kwargs = {**_kwargs, **self.func_kwargs, **map}
             return self.func(*self.func_args, **_kwargs)
