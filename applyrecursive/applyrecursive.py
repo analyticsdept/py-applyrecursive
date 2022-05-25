@@ -46,7 +46,9 @@ class ApplyRecursive():
                 except: return iterable
 
             elif isinstance(iterable, list):
-                if trigger in map.keys():
+                if isinstance(map, list):
+                    recurse(map[0], trigger, iterable, create)
+                elif trigger in map.keys():
                     return self.logic(map, trigger, iterable)
                 else:
                     for idx, item in enumerate(iterable):
